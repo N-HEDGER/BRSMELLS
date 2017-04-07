@@ -1,0 +1,10 @@
+%% Design config
+
+% Only two factors (stimulus and eye
+
+trialmat=repmat(1,const.Nglyphs/2,1);
+
+Trialevents.trialmat=GenerateEventTable(Table,const.Nreps,const.isfixed);
+
+
+

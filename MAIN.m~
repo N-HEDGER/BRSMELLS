@@ -1,6 +1,11 @@
 %% Add paths
-
 addpath('Config','Data','Stimuli','Conversion','Misc');
+
+%% Inputs
+
+const.isfixed=input('Fixed presentation order?');
+const.ispractice=input('Practice?');
+
 
 %% Constants
 
@@ -10,12 +15,30 @@ Const_config
 
 Scr_config
 
-%% Set up conditions
+
+%% Set up design
 
 Design_config
+%% Set up screen and textures
+
+[scr.window, scr.rect] = Screen('OpenWindow', scr.main, [const.BGcol]);
+priorityLevel=MaxPriority(scr.window);
+Priority(priorityLevel);
+slack = Screen('GetFlipInterval', scr.window);
+PRELOADTEXTURES
 
 
-%% Inputs
 
-const.isfixed=input('Fixed presentati
+for i=1:length(Trialevents.trialmat)
+
+    
+    Screen('DrawTexture', scr.window,STIMULI2.(structtype(p,:)){conditions(p,4),conditions(p,5)}, [], scr.stimrect,[]);
+Screen('DrawDots',scr.window,scr.mid,const.bigfixsize,const.bigfixcol,[],1);
+Screen('DrawDots',scr.window,scr.mid,const.smallfixsize,const.smallfixcol,[],1);
+Screen('DrawDots',scr.window,scr.mid,const.smallerfixsize,[const.smallerfixcol const.fixsequence(p) const.fixsequence(p)],[],1);
+
+    
+    
+    
+    
 

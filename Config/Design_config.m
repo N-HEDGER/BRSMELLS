@@ -2,17 +2,10 @@
 
 % Only two factors (stimulus and eye
 
-trialmat=nchoosek([1,2,1,2],2);
-trialmat = unique(trialmat, 'rows');
+trialmat=vertcat(repmat(1,const.Nglyphs/2,1),repmat(2,const.Nglyphs/2,1));
+trialmat(:,2)=vertcat((1:const.Nglyphs/2)',(1:const.Nglyphs/2)');
 
-
-Table = [];
-for i=1:const.Nmods
-Table=[Table; shoveonend(trialmat,(i))];
-end
-
-
-Trialevents.trialmat=GenerateEventTable(Table,const.Nreps,const.isfixed);
+Trialevents.trialmat=GenerateEventTable(trialmat,const.Nreps,const.isfixed);
 
 
 
