@@ -1,0 +1,21 @@
+%% Add paths
+
+addpath('Config','Data','Stimuli','Conversion','Misc');
+
+%% Constants
+
+Const_config
+
+%% Set up screen 
+
+Scr_config
+
+%% Set up conditions
+
+Design_config
+
+
+%% Inputs
+
+const.isfixed=input('Fixed presentati
+
